@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Jost";
+  src: url("/fonts/Jost-VariableFont_wght.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CormorantGaramond-Bold";
+  src: url("/fonts/CormorantGaramond-Bold.ttf") format("ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "CormorantGaramond-Medium";
+  src: url("/fonts/CormorantGaramond-Medium.ttf") format("ttf");
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: normal;
+}
+a:link {
+  color: #000;
+}
+
+a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #000;
+}
+
+a:active {
+  color: #000;
+}
