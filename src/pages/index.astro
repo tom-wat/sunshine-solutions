@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import myImage from "../assets/jean-guy-nakars-nsMSEUHuOEU-unsplash.jpg";
 ---
 
-<Layout title="Welcome to World." description="A imaginative site">
+<Layout title="Sunshine Solutions" description="A imaginative site">
   <MainHeader />
   <main class="main">
     <h2>
@@ -24,6 +24,7 @@ import myImage from "../assets/jean-guy-nakars-nsMSEUHuOEU-unsplash.jpg";
     container-type: inline-size;
     min-height: 100svh;
     position: relative;
+    background-color: black;
   }
   .hero {
     position: absolute;
@@ -34,15 +35,16 @@ import myImage from "../assets/jean-guy-nakars-nsMSEUHuOEU-unsplash.jpg";
   h2 {
     position: absolute;
     bottom: 15svh;
-    left: 15vw;
+    left: 12vw;
     z-index: 10;
     color: aliceblue;
   }
   p {
     font-size: 6.75rem;
     line-height: 6.75rem;
-    font-family: "CormorantGaramond-Medium";
-    filter: drop-shadow(0 0 1rem hsl(29 81% 50%));
+    font-family: "cormorant garamond", serif;
+    font-weight: 500;
+    filter: drop-shadow(0 0 1rem hsl(30 100% 40%));
   }
   .headline {
     font-size: 2rem;
@@ -52,3 +54,5 @@ import myImage from "../assets/jean-guy-nakars-nsMSEUHuOEU-unsplash.jpg";
     }
   }
 </style>
+
+<script></script>
