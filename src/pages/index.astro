@@ -3,24 +3,28 @@ import MainHeader from "../components/MainHeader.astro";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import myImage from "../assets/jean-guy-nakars-nsMSEUHuOEU-unsplash.jpg";
+import Section from "../components/Section.astro";
 ---
 
-<Layout title="Sunshine Solutions" description="A imaginative site">
+<Layout title="Sunshine Solutions" description="A conceptual business website">
   <MainHeader />
   <main class="main">
-    <h2>
-      <p>
-        Constant.<br />
-        Illuminating.<br />
-        Eternal.
-      </p>
-    </h2>
-    <Image src={myImage} alt="雄大な朝日の景色" class="hero" />
+    <div id="hero" class="container">
+      <h2>
+        <p>
+          Constant.<br />
+          Illuminating.<br />
+          Eternal.
+        </p>
+      </h2>
+      <Image src={myImage} alt="雄大な朝日の景色" class="hero" />
+    </div>
+    <Section />
   </main>
 </Layout>
 
 <style>
-  .main {
+  .container {
     container-type: inline-size;
     min-height: 100svh;
     position: relative;
@@ -55,4 +59,35 @@ import myImage from "../assets/jean-guy-nakars-nsMSEUHuOEU-unsplash.jpg";
   }
 </style>
 
-<script></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("header");
+    const hero = document.getElementById("hero");
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          header.classList.remove("background");
+          return;
+        }
+        if (!entry.isIntersecting) {
+          header.classList.add("background");
+          return;
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    observer.observe(hero);
+  });
+</script>
