@@ -1,62 +1,27 @@
 ---
 import MainHeader from "../components/MainHeader.astro";
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import myImage from "../assets/jean-guy-nakars-nsMSEUHuOEU-unsplash.webp";
 import Section from "../components/Section.astro";
+import Hero from "../components/Hero.astro";
+import "../styles/global.css";
 ---
 
 <Layout title="Sunshine Solutions" description="A conceptual business website">
   <MainHeader />
   <main class="main">
-    <div id="hero" class="container">
-      <h2>
-        <p>
-          Constant.<br />
-          Illuminating.<br />
-          Eternal.
-        </p>
-      </h2>
-      <Image src={myImage} alt="雄大な朝日の景色" class="hero" />
-    </div>
+    <Hero />
     <Section />
   </main>
 </Layout>
 
 <style>
-  .container {
-    container-type: inline-size;
-    min-height: 100svh;
-    position: relative;
-    background-color: black;
-  }
-  .hero {
-    position: absolute;
-    width: 100%;
-    height: 100svh;
-    object-fit: cover;
-  }
-  h2 {
-    position: absolute;
-    bottom: 15svh;
-    left: 12vw;
-    z-index: 10;
-    color: aliceblue;
-  }
-  p {
-    font-size: 6.75rem;
-    line-height: 6.75rem;
-    font-family: "cormorant garamond", serif;
-    font-weight: 500;
-    filter: drop-shadow(0 0 1rem hsl(30 100% 40%));
-  }
-  .headline {
+  /* .headline {
     font-size: 2rem;
     font-weight: 600;
     @container (min-width: 600px) {
       color: orange;
     }
-  }
+  } */
 </style>
 
 <script>

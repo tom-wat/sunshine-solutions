@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import myImage from "../assets/jean-guy-nakars-nsMSEUHuOEU-unsplash.webp";
+---
+
+<div id="hero" class="container">
+  <h2>
+    <p>
+      Constant.<br />
+      Illuminating.<br />
+      Eternal.
+    </p>
+  </h2>
+  <Image src={myImage} alt="雄大な朝日の景色" class="hero" />
+</div>
+
+<style>
+  .container {
+    container-type: inline-size;
+    min-height: 100svh;
+    position: relative;
+    background-color: black;
+  }
+  .hero {
+    position: absolute;
+    width: 100%;
+    height: 100svh;
+    object-fit: cover;
+  }
+  h2 {
+    position: absolute;
+    bottom: 15svh;
+    left: 12vw;
+    z-index: 10;
+  }
+  p {
+    color: hsl(240, 100%, 97%);
+    font-size: 6.75rem;
+    line-height: 6.75rem;
+    font-family: "cormorant garamond", serif;
+    font-weight: 500;
+    filter: drop-shadow(0 0 1rem hsl(30 100% 40%));
+  }
+</style>
