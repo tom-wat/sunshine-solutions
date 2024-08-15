@@ -4,6 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import "../styles/global.css";
 import Mission from "../components/Mission.astro";
+import ImageSection from "../components/ImageSection.astro";
+import Image1 from "../assets/darren-bockman-pN3Z2usSIQw-unsplash.webp";
 ---
 
 <Layout title="Sunshine Solutions" description="A conceptual business website">
@@ -11,6 +13,7 @@ import Mission from "../components/Mission.astro";
   <main class="main">
     <Hero />
     <Mission />
+    <ImageSection src={Image1} alt="森に日光が差し込む画像" />
   </main>
 </Layout>
 

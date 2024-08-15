@@ -1,0 +1,23 @@
+---
+const { src, alt } = Astro.props;
+import { Image } from "astro:assets";
+---
+
+<section>
+  <Image src={src} alt={alt} class="image" />
+</section>
+
+<style>
+  section {
+    container-type: inline-size;
+    min-height: 100svh;
+    position: relative;
+    background-color: black;
+  }
+  .image {
+    position: absolute;
+    width: 100%;
+    height: 100svh;
+    object-fit: cover;
+  }
+</style>
