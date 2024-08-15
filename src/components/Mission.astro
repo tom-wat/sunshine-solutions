@@ -1,126 +1,162 @@
 ---
-import GridLayout from "../layouts/GridLayout.astro";
+import GridWrapper from "./GridWrapper.astro";
 ---
 
-<GridLayout>
-  <div id="mission" class="text-wrapper">
-    <p class="category">Our <span class="color">mission</span></p>
-    <p class="headline">絶え間なく<br />宇宙を<br />照らし続ける</p>
-    <p class="paragraph">
-      私たちは太陽系の中心にある存在として、<br />
-      太陽系に不可欠なエネルギーと重力の安定を提供しています。<br />
-      革新的な核融合技術を通じて、生命と惑星の営みを<br />
-      持続可能な方法で支えることが私たちの使命です。<br />
-    </p>
-  </div>
-  <div class="picture-wrapper">
-    <svg
-      width="100%"
-      height="100%"
-      role="img"
-      aria-label="太陽系の概略図"
-      viewBox="0 0 617 617"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      xml:space="preserve"
-      style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;"
-    >
-      <g
-        id="illustration"
-        transform="matrix(0.880697,0,0,1.97487,-312.173,1716.67)"
+<section>
+  <GridWrapper>
+    <div id="mission" class="text-wrapper">
+      <p class="category">Our <span class="color">mission</span></p>
+      <h2 class="headline">絶え間なく<br />宇宙を<br />照らし続ける</h2>
+      <p class="paragraph">
+        私たちは太陽系の中心にある存在として、<br />
+        太陽系に不可欠なエネルギーと重力の安定を提供しています。<br />
+        革新的な核融合技術を通じて、生命と惑星の営みを<br />
+        持続可能な方法で支えることが私たちの使命です。<br />
+      </p>
+    </div>
+    <div class="picture-wrapper">
+      <svg
+        width="100%"
+        height="100%"
+        role="img"
+        aria-label="太陽系の概略図"
+        viewBox="0 0 817 817"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xml:space="preserve"
+        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;"
       >
-        <g transform="matrix(0.244772,0,0,0.109157,112.013,-923.754)">
-          <circle
-            cx="2408.26"
-            cy="1917.02"
-            r="143.333"
-            style="fill:none;stroke:rgb(51,51,51);stroke-width:2.78px;"
-          ></circle>
-        </g>
-        <g transform="matrix(0.995366,0,0,0.443887,-1692.4,-1564)">
-          <circle
-            cx="2408.26"
-            cy="1917.02"
-            r="351.53"
-            style="fill:none;stroke:rgb(51,51,51);stroke-width:0.68px;"
-          ></circle>
-        </g>
-        <g transform="matrix(0.498331,0,0,0.222232,-495.409,-1139.09)">
-          <circle
-            cx="2408.26"
-            cy="1917.02"
-            r="351.53"
-            style="fill:none;stroke:rgb(51,51,51);stroke-width:1.37px;"
-          ></circle>
-        </g>
-        <g transform="matrix(0.149175,0,0,0.0665252,342.235,-842.029)">
-          <circle
-            cx="2408.26"
-            cy="1917.02"
-            r="351.53"
-            style="fill:none;stroke:rgb(51,51,51);stroke-width:4.57px;"
-          ></circle>
-        </g>
-        <g transform="matrix(0.0959775,0,0,0.0428014,492.807,-810.14)">
-          <circle
-            cx="2396.11"
-            cy="1937.73"
-            r="52.402"
-            style="fill:rgb(0,186,253);"></circle>
-        </g>
-        <g transform="matrix(0.0959775,0,0,0.0428014,433.903,-813.844)">
-          <circle
-            cx="2396.11"
-            cy="1937.73"
-            r="52.402"
-            style="fill:rgb(253,131,0);"></circle>
-        </g>
-        <g transform="matrix(0.140071,0,0,0.0624651,613.451,-734.353)">
-          <g id="sun">
+        <g
+          id="illustration"
+          transform="matrix(1.16655,0,0,2.61586,-413.594,2273.75)"
+        >
+          <g
+            id="orbit4"
+            transform="matrix(0.995366,0,0,0.443887,-1692.4,-1564)"
+          >
             <circle
-              cx="628.518"
-              cy="317.839"
-              r="132.161"
-              style="fill:url(#_Linear1);"></circle>
+              cx="2408.26"
+              cy="1917.02"
+              r="351.53"
+              style="fill:none;stroke:rgb(179,179,179);stroke-width:0.52px;"
+            ></circle>
+          </g>
+          <g
+            id="orbit3"
+            transform="matrix(0.498331,0,0,0.222232,-495.409,-1139.09)"
+          >
+            <circle
+              cx="2408.26"
+              cy="1917.02"
+              r="351.53"
+              style="fill:none;stroke:rgb(179,179,179);stroke-width:1.03px;"
+            ></circle>
+          </g>
+          <g
+            id="orbit2"
+            transform="matrix(0.149175,0,0,0.0665252,342.235,-842.029)"
+          >
+            <circle
+              cx="2408.26"
+              cy="1917.02"
+              r="351.53"
+              style="fill:none;stroke:rgb(179,179,179);stroke-width:3.45px;"
+            ></circle>
+          </g>
+          <g
+            id="orbit1"
+            transform="matrix(0.244772,0,0,0.109157,112.013,-923.754)"
+          >
+            <circle
+              cx="2408.26"
+              cy="1917.02"
+              r="143.333"
+              style="fill:none;stroke:rgb(179,179,179);stroke-width:2.1px;"
+            ></circle>
+          </g>
+          <g
+            id="saturn"
+            transform="matrix(0.561915,0,0,0.250588,-995.378,-1180.77)"
+          >
+            <circle
+              cx="2568.44"
+              cy="2289.19"
+              r="17.796"
+              style="fill:rgb(255,212,153);"></circle>
+          </g>
+          <g
+            id="jupiter"
+            transform="matrix(0.561915,0,0,0.250588,-599.905,-1334.81)"
+          >
+            <circle
+              cx="2568.44"
+              cy="2289.19"
+              r="17.796"
+              style="fill:rgb(255,213,61);"></circle>
+          </g>
+          <g
+            id="mars"
+            transform="matrix(0.0959775,0,0,0.0428014,433.903,-813.844)"
+          >
+            <circle
+              cx="2396.11"
+              cy="1937.73"
+              r="52.402"
+              style="fill:rgb(253,131,0);"></circle>
+          </g>
+          <g
+            id="earth"
+            transform="matrix(0.0959775,0,0,0.0428014,492.807,-810.14)"
+          >
+            <circle
+              cx="2396.11"
+              cy="1937.73"
+              r="52.402"
+              style="fill:rgb(0,186,253);"></circle>
+          </g>
+          <g transform="matrix(0.140071,0,0,0.0624651,613.451,-734.353)">
+            <g id="sun">
+              <circle
+                cx="628.518"
+                cy="317.839"
+                r="132.161"
+                style="fill:url(#_Linear1);"></circle>
+            </g>
           </g>
         </g>
-        <g transform="matrix(0.561915,0,0,0.250588,-599.905,-1334.81)">
-          <circle
-            cx="2568.44"
-            cy="2289.19"
-            r="17.796"
-            style="fill:rgb(255,213,61);"></circle>
-        </g>
-        <g transform="matrix(0.561915,0,0,0.250588,-995.378,-1180.77)">
-          <circle
-            cx="2568.44"
-            cy="2289.19"
-            r="17.796"
-            style="fill:rgb(255,212,153);"></circle>
-        </g>
-      </g>
-      <defs>
-        <linearGradient
-          id="_Linear1"
-          x1="0"
-          y1="0"
-          x2="1"
-          y2="0"
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="matrix(2.44022e-14,398.518,-398.518,2.44022e-14,628.518,122.391)"
-          ><stop offset="0" style="stop-color:rgb(254,255,22);stop-opacity:1"
-          ></stop><stop
-            offset="1"
-            style="stop-color:rgb(255,157,0);stop-opacity:1"
-          ></stop></linearGradient
-        >
-      </defs>
-    </svg>
-  </div>
-</GridLayout>
+        <defs>
+          <linearGradient
+            id="_Linear1"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="matrix(2.44022e-14,398.518,-398.518,2.44022e-14,628.518,122.391)"
+            ><stop offset="0" style="stop-color:rgb(254,255,22);stop-opacity:1"
+            ></stop><stop
+              offset="1"
+              style="stop-color:rgb(255,157,0);stop-opacity:1"
+            ></stop></linearGradient
+          >
+        </defs>
+      </svg>
+    </div>
+  </GridWrapper>
+</section>
 
 <style>
+  section {
+    background: rgb(255, 199, 201);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 199, 201, 0.35) 0%,
+      rgba(255, 251, 163, 0.35) 60%,
+      rgba(206, 255, 128, 0.35) 100%
+    );
+    position: relative;
+  }
   .text-wrapper {
     display: flex;
     flex-direction: column;
@@ -152,7 +188,11 @@ import GridLayout from "../layouts/GridLayout.astro";
     padding-bottom: 9rem;
   }
   .picture-wrapper {
-    grid-column: 5 / span 4;
-    width: 38.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55.5rem;
+    z-index: -1;
   }
 </style>
