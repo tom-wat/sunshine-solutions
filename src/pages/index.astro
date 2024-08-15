@@ -1,28 +1,18 @@
 ---
 import MainHeader from "../components/MainHeader.astro";
 import Layout from "../layouts/Layout.astro";
-import Section from "../components/Section.astro";
 import Hero from "../components/Hero.astro";
 import "../styles/global.css";
+import Mission from "../components/Mission.astro";
 ---
 
 <Layout title="Sunshine Solutions" description="A conceptual business website">
   <MainHeader />
   <main class="main">
     <Hero />
-    <Section />
+    <Mission />
   </main>
 </Layout>
-
-<style>
-  /* .headline {
-    font-size: 2rem;
-    font-weight: 600;
-    @container (min-width: 600px) {
-      color: orange;
-    }
-  } */
-</style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
