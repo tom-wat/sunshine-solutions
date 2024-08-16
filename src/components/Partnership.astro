@@ -1,0 +1,98 @@
+---
+import GridWrapper from "./GridWrapper.astro";
+import { Image } from "astro:assets";
+import figure from "../assets/triangle.avif";
+---
+
+<section id="partnerships">
+  <GridWrapper>
+    <div class="text-wrapper">
+      <p class="category">Our <span class="color">partnerships</span></p>
+      <h2 class="headline"><span class="number">46</span>億年の歴史</h2>
+      <h3 class="sub-headline">私たちと地球の関係</h3>
+      <p class="paragraph">
+        <span class="bg-line">私たちは、46億年にわたり、</span><br />
+        <span class="bg-line">地球に不可欠なエネルギーと</span><br />
+        <span class="bg-line">光のサービスを提供してきました。</span><br />
+        <span class="bg-line">私たちは、地球との長年の歴史を誇りに思い、</span
+        ><br />
+        <span class="bg-line">今後も何十億年にわたる </span><br />
+        <span class="bg-line">素晴らしい未来を楽しみにしています。</span><br />
+      </p>
+    </div>
+    <div class="picture-wrapper">
+      <Image
+        src={figure}
+        alt="地球誕生から現在までの数直線"
+        width="1200"
+        height="1019"
+        class="figure"
+      />
+    </div>
+  </GridWrapper>
+</section>
+
+<style>
+  section {
+    background: rgb(255, 199, 201);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 199, 201, 0.35) 0%,
+      rgba(255, 251, 163, 0.35) 60%,
+      rgba(206, 255, 128, 0.35) 100%
+    );
+    position: relative;
+  }
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / span 3;
+    padding-top: 7rem;
+    color: hsl(0, 0%, 25%);
+  }
+  .category {
+    font-size: 2.25rem;
+    font-family: "cormorant garamond", serif;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    & .color {
+      color: hsl(340, 100%, 50%);
+    }
+  }
+  .headline {
+    color: hsl(340, 100%, 50%);
+    font-family: "shippori mincho", serif;
+    font-weight: 400;
+    font-size: 4.875rem;
+    line-height: 1.25;
+    margin-bottom: 10rem;
+  }
+  .number {
+    letter-spacing: 0.25rem;
+    font-size: 5.25rem;
+  }
+  .sub-headline {
+    font-family: "noto sans", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 3.4rem;
+  }
+  .paragraph {
+    font-size: 1.25rem;
+    font-family: "noto sans", sans-serif;
+    font-weight: 500;
+    line-height: 1.9;
+    padding-bottom: 9rem;
+    letter-spacing: 0.05rem;
+  }
+  .picture-wrapper {
+    width: 100%;
+    grid-column: 5 / span 3;
+    display: grid;
+    place-content: center;
+  }
+  .figure {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
