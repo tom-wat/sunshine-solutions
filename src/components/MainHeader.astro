@@ -101,9 +101,11 @@
 <style>
   header {
     width: calc(100% - 5rem);
+    max-width: 1800px;
     position: fixed;
-    top: 2.5rem;
-    left: 2.5rem;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(8, minmax(max-content, 1fr));
@@ -115,7 +117,7 @@
 
     &.background {
       backdrop-filter: blur(2.4rem);
-      background-color: hsla(0, 0%, 0%, 0.1);
+      background-color: hsla(0, 0%, 15%, 0.1);
     }
   }
 

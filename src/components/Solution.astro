@@ -1,5 +1,346 @@
 ---
+import GridWrapper from "./GridWrapper.astro";
+import { Image } from "astro:assets";
+import lightedEarth from "../assets/lighted earth.avif";
+import heatedEarth from "../assets/heated earth.avif";
 
+import Card from "./Card.astro";
+import CardImage1 from "../assets/lukas-smith-d7q9-L_eWYg-unsplash.avif";
+import CardImage2 from "../assets/kumiko-shimizu-NZrsM6_i0ww-unsplash.avif";
+import CardImage3 from "../assets/harshil-gudka-pU-9BYqjhyo-unsplash.avif";
+import CardImage4 from "../assets/oshadha-viduranga-JFIE7x5lEmE-unsplash.avif";
+import CardImage5 from "../assets/miguel-a-amutio-bQgat1I0hVs-unsplash.avif";
+import CardImage6 from "../assets/noaa-UJsUJr3cgEM-unsplash.avif";
+import CardImage7 from "../assets/samsommer-J3ABLQjZQBg-unsplash.avif";
+import CardImage8 from "../assets/hector-ramon-perez-sjAtGCs6VXs-unsplash.avif";
 ---
 
-<section></section>
+<section id="solutions">
+  <GridWrapper>
+    <h2 class="category">Our <span class="color">Solutions</span></h2>
+    <div class="picture-wrapper">
+      <Image
+        src={lightedEarth}
+        width="1200"
+        height="1200"
+        alt="光に照らされた地球"
+        class="earth"
+      />
+    </div>
+    <div class="text-wrapper">
+      <p class="number">1</p>
+      <h2 class="headline">光</h2>
+      <p class="paragraph">
+        <span class="bg-line">私たちの光は、</span><br />
+        <span class="bg-line">休むことなく世界を明るく照らし続けます。</span><br
+        />
+        <span class="bg-line">私たちがもたらす光は、</span><br />
+        <span class="bg-line">一日を明るくするだけでなく、</span><br />
+        <span class="bg-line">地球上の生命の未来を照らし出します。</span>
+      </p>
+    </div>
+    <Card
+      src={CardImage1}
+      alt="上空から見た風景"
+      width="1000"
+      height="1200"
+      className="card-position1"
+    >
+      <div class="card__text-wrapper">
+        <h3 class="card__title">世界規模のサービス提供</h3>
+        <p class="card__tag">Illumination</p>
+        <p class="card__paragraph">
+          <span class="card__bg-line">常に地球の半分に明るい光を提供し、</span
+          ><br />
+          <span class="card__bg-line">生産性の高い環境を実現します。</span>
+        </p>
+      </div>
+    </Card>
+    <Card
+      src={CardImage2}
+      alt="光を透過する葉っぱ"
+      width="1000"
+      height="1200"
+      className="card-position1"
+    >
+      <div class="card__text-wrapper">
+        <h3 class="card__title">エネルギー効率の高い光合成サポート</h3>
+        <p class="card__tag">Illumination</p>
+        <p class="card__paragraph">
+          <span class="card__bg-line"
+            >植物の成長に最適化された光の波長を提供し、
+          </span><br />
+          <span class="card__bg-line"
+            >地球規模の食物連鎖と酸素生産を支えています。</span
+          >
+        </p>
+      </div></Card
+    >
+    <Card
+      src={CardImage3}
+      alt="草原にキリンがいる風景"
+      width="1000"
+      height="1200"
+      className="card-position1"
+    >
+      <div class="card__text-wrapper">
+        <h3 class="card__title">高度な視覚強化</h3>
+        <p class="card__tag">Illumination</p>
+        <p class="card__paragraph">
+          <span class="card__bg-line">無数の生物種の視覚システムに</span><br />
+          <span class="card__bg-line">最適なスペクトルを提供し、</span><br />
+          <span class="card__bg-line">動物界全体のナビゲーション、狩猟、</span
+          ><br />
+          <span class="card__bg-line"> 社会的相互作用を促進します。</span>
+        </p>
+      </div></Card
+    >
+    <Card
+      src={CardImage4}
+      alt="山から眺める見晴らしのいい風景"
+      width="1000"
+      height="1200"
+      className="card-position1"
+    >
+      <div class="card__text-wrapper">
+        <h3 class="card__title">気分の向上</h3>
+        <p class="card__tag">Illumination</p>
+        <p class="card__paragraph">
+          <span class="card__bg-line">私たちの光は機能的なだけでなく、</span><br
+          />
+          <span class="card__bg-line"
+            >自然な気分向上効果があり、幸福感を促進し、</span
+          ><br />
+          <span class="card__bg-line">体内時計を調整します。</span>
+        </p>
+      </div></Card
+    >
+    <div class="picture-wrapper-2">
+      <Image
+        src={heatedEarth}
+        width="1200"
+        height="1200"
+        alt="熱を帯びた地球"
+        class="earth"
+      />
+    </div>
+    <div class="text-wrapper">
+      <p class="number">2</p>
+      <h2 class="headline">熱</h2>
+      <p class="paragraph">
+        <span class="bg-line"
+          >核融合反応から生まれた太陽放射によって、
+        </span><br />
+        <span class="bg-line">地球にもたらされた熱は、</span><br />
+        <span class="bg-line"
+          >地球のエネルギーバランスの中核を担っています。</span
+        ><br />
+        <span class="bg-line">私たちがもたらす熱は、</span><br />
+        <span class="bg-line">単に惑星を温めるだけでなく、</span><br />
+        <span class="bg-line">生命そのものの原動力となっています。</span>
+      </p>
+    </div>
+    <Card
+      src={CardImage5}
+      alt="空から眺める雲と草原の風景"
+      width="1000"
+      height="1200"
+      className="card-position1"
+    >
+      <div class="card__text-wrapper">
+        <h3 class="card__title">気候調整</h3>
+        <p class="card__tag card__tag--walm">Heat</p>
+        <p class="card__paragraph">
+          <span class="card__bg-line">地球の気候システムの原動力となり、</span
+          ><br />
+          <span class="card__bg-line"
+            >多様な生命体が生息可能な温度範囲を確保します。</span
+          >
+        </p>
+      </div></Card
+    >
+    <Card
+      src={CardImage6}
+      alt="巨大な雲と虹"
+      width="1000"
+      height="1200"
+      className="card-position1"
+    >
+      <div class="card__text-wrapper">
+        <h3 class="card__title">大気のダイナミクス</h3>
+        <p class="card__tag card__tag--walm">Heat</p>
+        <p class="card__paragraph">
+          <span class="card__bg-line"
+            >熱の分配により、地球規模の風系や
+          </span><br />
+          <span class="card__bg-line">気象システムを駆動し、</span><br />
+          <span class="card__bg-line"
+            >地球の水循環に不可欠な役割を果たします。</span
+          >
+        </p>
+      </div></Card
+    >
+    <Card
+      src={CardImage7}
+      alt="空から眺める海"
+      width="1000"
+      height="1200"
+      className="card-position1"
+      ><div class="card__text-wrapper">
+        <h3 class="card__title">海流の活性化</h3>
+        <p class="card__tag card__tag--walm">Heat</p>
+        <p class="card__paragraph">
+          <span class="card__bg-line"
+            >海洋コンベアベルトにエネルギーを与え、
+          </span><br />
+          <span class="card__bg-line"
+            >栄養分の分配を促進し、世界中の海洋生態系を支えます。</span
+          >
+        </p>
+      </div></Card
+    >
+    <Card
+      src={CardImage8}
+      alt="花畑と遠くに山が見える風景"
+      width="1000"
+      height="1200"
+      className="card-position1"
+    >
+      <div class="card__text-wrapper">
+        <h3 class="card__title">季節の多様性</h3>
+        <p class="card__tag card__tag--walm">Heat</p>
+        <p class="card__paragraph">
+          <span class="card__bg-line"
+            >軸の傾きによる気温の変化により、
+          </span><br />
+          <span class="card__bg-line">多様な季節体験を提供し、</span><br />
+          <span class="card__bg-line"
+            >生物多様性と農業サイクルを支援します。</span
+          >
+        </p>
+      </div></Card
+    >
+  </GridWrapper>
+</section>
+
+<style>
+  section {
+    background: rgb(255, 199, 201);
+    background: repeating-linear-gradient(
+        20deg,
+        transparent,
+        transparent 3px,
+        rgba(255, 255, 255, 1) 3px,
+        rgba(255, 255, 255, 1) 6px
+      ),
+      linear-gradient(
+        135deg,
+        rgba(255, 199, 201, 0.3) 0%,
+        rgba(255, 251, 163, 0.5) 60%,
+        rgba(206, 255, 128, 0.5) 100%
+      );
+    container-type: inline-size;
+    padding-bottom: 3rem;
+  }
+  .category {
+    font-size: 12rem;
+    font-family: "cormorant garamond", serif;
+    font-weight: 700;
+    grid-column: 1 / span 8;
+    justify-self: center;
+    align-self: center;
+    padding-top: 5rem;
+    color: hsl(0, 0%, 25%);
+    & .color {
+      color: hsl(340, 100%, 50%);
+    }
+  }
+  .picture-wrapper {
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 5;
+  }
+  .picture-wrapper-2 {
+    grid-column: 2 / span 3;
+    grid-row: 7 / span 5;
+  }
+  .earth {
+    width: 100%;
+    height: auto;
+    position: sticky;
+    top: 5rem;
+  }
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-column: 5 / span 3;
+    padding-top: 5rem;
+    color: hsl(0, 0%, 25%);
+  }
+  .number {
+    font-size: 2rem;
+    font-family: "shippori mincho", serif;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .headline {
+    color: hsl(340, 100%, 50%);
+    font-family: "shippori mincho", serif;
+    font-weight: 400;
+    font-size: 3.75rem;
+    line-height: 1.25;
+    margin-bottom: 6.5rem;
+  }
+  .paragraph {
+    font-size: 1.25rem;
+    font-family: "noto sans", sans-serif;
+    font-weight: 500;
+    line-height: 1.9;
+    padding-bottom: 9rem;
+    letter-spacing: 0.05rem;
+  }
+  /* .bg-line {
+    background-color: hsl(60, 100%, 98%);
+  } */
+  .card__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    width: max-content;
+    color: hsl(0, 0%, 25%);
+    z-index: 10;
+    padding: 5rem 2.6rem;
+  }
+  .card__title {
+    font-size: 1.375rem;
+    font-family: "noto sans", sans-serif;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    width: min-content;
+    background-color: hsl(60, 100%, 98%);
+    padding: 0 0.3rem;
+    border-radius: 0.3rem;
+  }
+  .card__tag {
+    color: hsl(0, 0%, 20%);
+    font-family: "jost", sans-serif;
+    background-color: hsl(50, 100%, 70%);
+    width: min-content;
+    border-radius: 1rem;
+    padding: 0 0.5rem;
+    margin-bottom: 2.4rem;
+  }
+  .card__tag--walm {
+    background-color: hsl(20, 100%, 70%);
+  }
+  .card__paragraph {
+    font-family: "noto sans", sans-serif;
+    font-weight: 500;
+    line-height: 2;
+    letter-spacing: 0.03rem;
+  }
+  .card__bg-line {
+    background-color: hsl(60, 100%, 98%);
+    padding: 0 0.3rem;
+    border-radius: 0.3rem;
+  }
+</style>

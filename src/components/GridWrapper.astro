@@ -12,6 +12,9 @@
     width: 100%;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(8, minmax(max-content, 1fr));
+    grid-template-columns: repeat(8, calc((100vw - 12rem) / 8));
+    grid-auto-rows: auto;
+    /* max-width: 1800px;
+    margin: 0 auto; */
   }
 </style>

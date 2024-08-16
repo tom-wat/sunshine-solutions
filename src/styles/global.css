@@ -31,6 +31,12 @@
   font-weight: 400;
   font-display: swap;
 }
+@font-face {
+  font-family: "noto sans";
+  src: url("/sunshine-solutions/fonts/NotoSansJP-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
 
 * {
   margin: 0;
@@ -39,19 +45,5 @@
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
+  word-break: keep-all;
 }
-/* a:link {
-  color: #000;
-}
-
-a:visited {
-  color: #000;
-}
-
-a:hover {
-  color: #000;
-}
-
-a:active {
-  color: #000;
-} */
