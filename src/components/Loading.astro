@@ -25,12 +25,31 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const loadingScreen = document.querySelector(".loading-screen") as any;
+    let startTime = performance.now();
 
-    setTimeout(() => {
-      loadingScreen.classList.add("fade-out");
-      loadingScreen.addEventListener("transitionend", () => {
-        loadingScreen.style.display = "none";
+    function hideLoadingScreen() {
+      requestAnimationFrame(() => {
+        loadingScreen.classList.add("fade-out");
       });
-    }, 700);
+    }
+
+    function checkCacheAndHide() {
+      const loadTime = performance.now() - startTime;
+      const isCached = loadTime < 200; // 200ミリ秒未満の場合、キャッシュされていると仮定
+
+      if (isCached) {
+        // キャッシュがある場合、短い遅延を設定
+        setTimeout(hideLoadingScreen, 300);
+      } else {
+        // キャッシュがない場合、より長い遅延を設定
+        setTimeout(hideLoadingScreen, 1000);
+      }
+    }
+
+    window.addEventListener("load", checkCacheAndHide);
+
+    loadingScreen.addEventListener("transitionend", () => {
+      loadingScreen.style.display = "none";
+    });
   });
 </script>
