@@ -1,0 +1,185 @@
+---
+
+---
+
+<div id="menu" class="menu-container">
+  <button
+    id="menu-toggle"
+    aria-label="メニューを開く"
+    aria-expanded="false"
+    aria-controls="menu-list"
+  >
+    <span class="hamburger">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </span>
+  </button>
+  <nav id="menu-nav" hidden>
+    <ul id="menu-list" role="menu">
+      <li role="none"><a href="#top" role="menuitem">Top</a></li>
+      <li role="none"><a href="#mission" role="menuitem">Our mission</a></li>
+      <li role="none">
+        <a href="#solutions" role="menuitem">Our solutions</a>
+      </li>
+      <li role="none">
+        <a href="#partnerships" role="menuitem">Our partnerships</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<style>
+  .menu-container {
+    position: fixed;
+    top: 7%;
+    right: 5%;
+    z-index: 100;
+    font-size: 1rem;
+    font-family: "jost", sans-serif;
+    font-weight: 500;
+    line-height: 0;
+    visibility: hidden;
+    opacity: 0%;
+    transition:
+      opacity 0.3s,
+      visibility 0.3s;
+    &.visible {
+      visibility: visible;
+      opacity: 100%;
+    }
+  }
+
+  #menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 0;
+    padding: 0.75rem 0.75rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: hsl(0 0% 0% / 0.1);
+    backdrop-filter: blur(1rem);
+    color: hsl(0, 0%, 100%);
+  }
+
+  #menu-toggle:focus-visible {
+    outline: 2px solid hsl(45, 100%, 50%);
+    border-radius: 0.5rem;
+  }
+
+  #menu-nav {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: hsl(0 0% 0% / 0.1);
+    backdrop-filter: blur(1rem);
+    border-radius: 0.75rem;
+    padding: 1rem 0rem;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s,
+      visibility 0.3s;
+  }
+
+  #menu-nav.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: max-content;
+  }
+
+  #menu-list li:not(:last-child) {
+  }
+
+  #menu-list a {
+    display: block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.2s;
+  }
+
+  #menu-list a:hover,
+  #menu-list a:focus-visible {
+    background-color: hsl(45, 100%, 50%);
+    outline: none;
+  }
+  .hamburger {
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .line {
+    display: block;
+    background: #fff;
+    width: 100%;
+    height: 2px;
+    transition: all 0.3s;
+    border-radius: 1rem;
+  }
+
+  #menu-toggle[aria-expanded="true"] .line1 {
+    transform: translateY(calc(0.5rem - 1px)) rotate(45deg);
+  }
+
+  #menu-toggle[aria-expanded="true"] .line2 {
+    opacity: 0;
+  }
+
+  #menu-toggle[aria-expanded="true"] .line3 {
+    transform: translateY(calc(-0.5rem + 1px)) rotate(-45deg);
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuNav = document.getElementById("menu-nav");
+    const menuList = document.getElementById("menu-list");
+
+    function toggleMenu() {
+      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!expanded));
+
+      if (expanded) {
+        menuNav.classList.remove("active");
+        setTimeout(() => {
+          menuNav.hidden = true;
+        }, 300); // トランジションの時間と合わせる
+      } else {
+        menuNav.hidden = false;
+        // 非同期で実行することで、hidden属性の解除が反映された後にクラスを追加
+        setTimeout(() => {
+          menuNav.classList.add("active");
+        }, 10);
+      }
+
+      menuToggle.setAttribute(
+        "aria-label",
+        expanded ? "メニューを開く" : "メニューを閉じる"
+      );
+    }
+
+    menuToggle.addEventListener("click", toggleMenu);
+    menuList.addEventListener("click", toggleMenu);
+
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.key === "Escape" &&
+        menuToggle.getAttribute("aria-expanded") === "true"
+      ) {
+        toggleMenu();
+      }
+    });
+  });
+</script>
