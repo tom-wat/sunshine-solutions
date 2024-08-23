@@ -1,20 +1,81 @@
 ---
-
+const calcurateGrid = (paddingRem, columnNumber, gapRem) => {
+  const gutterNumber = columnNumber - 1;
+  const restWidth = paddingRem * 2 + gapRem * gutterNumber;
+  return {
+    padding: `${paddingRem}rem`,
+    column: columnNumber,
+    gap: `${gapRem}rem`,
+    restWidth: `${restWidth}rem`,
+  };
+};
+const {
+  padding: paddingPC,
+  column: columnPC,
+  gap: gapPC,
+  restWidth: restWidthPC,
+} = calcurateGrid(2.5, 8, 1);
+const {
+  padding: paddingTab,
+  column: columnTab,
+  gap: gapTab,
+  restWidth: restWidthTab,
+} = calcurateGrid(1.5, 8, 1);
+const {
+  padding: paddingSp,
+  column: columnSp,
+  gap: gapSp,
+  restWidth: restWidthSp,
+} = calcurateGrid(1, 8, 0.5);
 ---
 
 <div class="wrapper">
   <slot />
 </div>
 
-<style>
+<style
+  define:vars={{
+    paddingPC,
+    gapPC,
+    columnPC,
+    restWidthPC,
+    paddingTab,
+    gapTab,
+    columnTab,
+    restWidthTab,
+    paddingSp,
+    gapSp,
+    columnSp,
+    restWidthSp,
+  }}
+>
   .wrapper {
-    padding: 2.5rem;
+    padding: var(--paddingSp);
     width: 100%;
     display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(8, calc((100vw - 12rem) / 8));
+    gap: var(--gapSp);
+    grid-template-columns: repeat(
+      var(--columnSp),
+      calc((100vw - var(--restWidthSp)) / var(--columnSp))
+    );
     grid-auto-rows: auto;
     /* max-width: 1800px;
     margin: 0 auto; */
+    @media (min-width: 768px) {
+      padding: var(--paddingTab);
+      gap: var(--gapTab);
+      grid-template-columns: repeat(
+        var(--columnTab),
+        calc((100vw - var(--restWidthTab)) / var(--columnTab))
+      );
+    }
+    @media (min-width: 1024px) {
+      padding: var(--paddingPC);
+      gap: var(--gapPC);
+      grid-template-columns: repeat(
+        var(--columnPC),
+        calc((100vw - var(--restWidthPC)) / var(--columnPC))
+      );
+    }
   }
 </style>

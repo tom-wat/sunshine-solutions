@@ -1,3 +1,10 @@
+:root {
+  --color-white: hsl(240, 100%, 97%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-hover: hsl(45, 100%, 50%);
+  --color-shadow: hsl(30 100% 40%);
+}
+
 @font-face {
   font-family: "jost";
   src: url("/sunshine-solutions/fonts/Jost-Medium.ttf") format("truetype");
@@ -38,11 +45,38 @@
   font-display: swap;
 }
 
-* {
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
   list-style: none;
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
+
+  --clamp-root-font-size: 16;
+
+  --clamp-slope: calc(
+    (var(--clamp-max) - var(--clamp-min)) /
+      (var(--clamp-viewport-max) - var(--clamp-viewport-min))
+  );
+  --clamp-intersect: calc(
+    var(--clamp-max) - (var(--clamp-slope) * var(--clamp-viewport-max))
+  );
+  --clamp-variable: calc(
+    var(--clamp-intersect) * (1rem / var(--clamp-root-font-size)) +
+      (var(--clamp-slope) * 100vw)
+  );
+  --clamp: clamp(
+    calc(var(--clamp-min) * (1rem / var(--clamp-root-font-size))),
+    var(--clamp-variable),
+    calc(var(--clamp-max) * (1rem / var(--clamp-root-font-size)))
+  );
+}
+body {
+  --clamp-viewport-min: 375;
+  --clamp-viewport-max: 1200;
+  --clamp-min: 14;
+  --clamp-max: 16;
 }

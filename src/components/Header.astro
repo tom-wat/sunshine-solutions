@@ -102,7 +102,7 @@ import GridWrapper from "./GridWrapper.astro";
 
 <style>
   header {
-    color: #fff;
+    color: var(--color-white);
   }
 
   ul {
@@ -110,13 +110,21 @@ import GridWrapper from "./GridWrapper.astro";
     grid-template-columns: subgrid;
     grid-column: 6 / -1;
     align-items: center;
+    white-space: nowrap;
+    visibility: hidden;
+    @media (min-width: 1024px) {
+      visibility: visible;
+    }
   }
   li {
+    --clamp-viewport-min: 1280;
+    --clamp-viewport-max: 2560;
+    --clamp-min: 15;
+    --clamp-max: 28;
+    font-size: var(--clamp);
     font-family: "jost", sans-serif;
     font-weight: 500;
-    &:not(:last-child) {
-      margin-right: 3rem;
-    }
+
     &:first-child {
       grid-column: 1 / span 1;
     }
@@ -132,11 +140,27 @@ import GridWrapper from "./GridWrapper.astro";
     transition: color 0.3s;
   }
   a:hover {
-    color: hsl(45, 100%, 50%);
+    color: var(--color-hover);
   }
   h1 {
-    width: 10vw;
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 767;
+    --clamp-min: 66;
+    --clamp-max: 158;
+    width: var(--clamp);
     height: 100%;
     grid-column: 1 / span 1;
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 133;
+      --clamp-max: 177;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 136;
+      --clamp-max: 272;
+    }
   }
 </style>

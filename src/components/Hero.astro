@@ -38,11 +38,27 @@ import Header from "./Header.astro";
     left: 12vw;
   }
   p {
-    color: hsl(240, 100%, 97%);
-    font-size: 6.75rem;
-    line-height: 6.75rem;
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 767;
+    --clamp-min: 45;
+    --clamp-max: 63;
+    color: var(--color-white);
+    font-size: var(--clamp);
+    line-height: 1;
     font-family: "cormorant garamond", serif;
     font-weight: 500;
-    filter: drop-shadow(0 0 1rem hsl(30 100% 40%));
+    filter: drop-shadow(0 0 1rem var(--color-shadow));
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 93;
+      --clamp-max: 127;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 90;
+      --clamp-max: 180;
+    }
   }
 </style>
