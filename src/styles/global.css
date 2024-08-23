@@ -1,6 +1,10 @@
 :root {
   --color-white: hsl(240, 100%, 97%);
+  --color-white-warm: hsl(60, 100%, 98%);
   --color-black: hsl(0, 0%, 0%);
+  --color-black-mild: hsl(0, 0%, 20%);
+  --color-tag-yellow: hsl(50, 100%, 70%);
+  --color-tag-orange: hsl(20, 100%, 70%);
   --color-hover: hsl(45, 100%, 50%);
   --color-shadow: hsl(30 100% 40%);
 }

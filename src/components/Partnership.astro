@@ -11,13 +11,12 @@ import figure from "../assets/triangle.avif";
       <h2 class="headline"><span class="number">46</span>億年の歴史</h2>
       <h3 class="sub-headline">私たちと地球の関係</h3>
       <p class="paragraph">
-        <span class="bg-line">私たちは、46億年にわたり、</span><br />
-        <span class="bg-line">地球に不可欠なエネルギーと</span><br />
-        <span class="bg-line">光のサービスを提供してきました。</span><br />
-        <span class="bg-line">私たちは、地球との長年の歴史を誇りに思い、</span
-        ><br />
-        <span class="bg-line">今後も何十億年にわたる </span><br />
-        <span class="bg-line">素晴らしい未来を楽しみにしています。</span><br />
+        <span class="bg-line">私たちは、46億年にわたり、</span>
+        <span class="bg-line">地球に不可欠なエネルギーと</span>
+        <span class="bg-line">光のサービスを提供してきました。</span>
+        <span class="bg-line">私たちは、地球との長年の歴史を誇りに思い、</span>
+        <span class="bg-line">今後も何十億年にわたる </span>
+        <span class="bg-line">素晴らしい未来を楽しみにしています。</span>
       </p>
     </div>
     <div class="picture-wrapper">
@@ -46,51 +45,172 @@ import figure from "../assets/triangle.avif";
   .text-wrapper {
     display: flex;
     flex-direction: column;
-    grid-column: 2 / span 3;
-    padding-top: 7rem;
+    grid-column: 2 / span 6;
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 768;
+    --clamp-min: 45;
+    --clamp-max: 108;
+    padding-top: var(--clamp);
     color: hsl(0, 0%, 25%);
+    @media (min-width: 768px) {
+      grid-column: 2 / span 5;
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 108;
+      --clamp-max: 144;
+    }
+    @media (min-width: 1024px) {
+      grid-column: 2 / span 3;
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 104;
+      --clamp-max: 208;
+    }
   }
   .category {
-    font-size: 2.25rem;
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 767;
+    --clamp-min: 18;
+    --clamp-max: 24;
+    font-size: var(--clamp);
     font-family: "cormorant garamond", serif;
     font-weight: 500;
     margin-bottom: 1rem;
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 26;
+      --clamp-max: 34;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 24;
+      --clamp-max: 48;
+    }
     & .color {
       color: hsl(340, 100%, 50%);
     }
   }
   .headline {
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 768;
+    --clamp-min: 32;
+    --clamp-max: 60;
     color: hsl(340, 100%, 50%);
     font-family: "shippori mincho", serif;
     font-weight: 400;
-    font-size: 4.875rem;
+    font-size: var(--clamp);
     line-height: 1.25;
-    margin-bottom: 10rem;
-    transform: translateX(-0.3vw);
+    margin-bottom: 2.875em;
+    transform: translateX(-0.35vw);
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 60;
+      --clamp-max: 80;
+      margin-bottom: 2.375em;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 60;
+      --clamp-max: 120;
+      margin-bottom: 2.375em;
+    }
   }
   .number {
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 768;
+    --clamp-min: 36;
+    --clamp-max: 64;
+    font-size: var(--clamp);
     letter-spacing: 0.25rem;
-    font-size: 5.25rem;
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 64;
+      --clamp-max: 84;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 64;
+      --clamp-max: 124;
+    }
   }
   .sub-headline {
+    font-size: var(--clamp);
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 768;
+    --clamp-min: 18;
+    --clamp-max: 20;
     font-family: "noto sans", sans-serif;
     font-weight: 500;
-    font-size: 1.5rem;
-    margin-bottom: 3.4rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 2em;
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 20;
+      --clamp-max: 26;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 20;
+      --clamp-max: 36;
+    }
   }
   .paragraph {
-    font-size: 1.25rem;
+    font-size: var(--clamp);
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 768;
+    --clamp-min: 14;
+    --clamp-max: 16;
     font-family: "noto sans", sans-serif;
     font-weight: 500;
     line-height: 1.9;
-    padding-bottom: 9rem;
+    padding-bottom: 6.375em;
     letter-spacing: 0.05rem;
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 16;
+      --clamp-max: 22;
+      padding-bottom: 8.375em;
+      word-break: keep-all;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 16;
+      --clamp-max: 32;
+      padding-bottom: 8.375em;
+      word-break: keep-all;
+    }
   }
   .picture-wrapper {
     width: 100%;
-    grid-column: 5 / span 3;
+    grid-column: 1 / span 8;
+    transform: translateX(-2vw);
     display: grid;
     place-content: center;
+    font-size: var(--clamp);
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 768;
+    --clamp-min: 14;
+    --clamp-max: 16;
+    padding-bottom: 6.375em;
+    @media (min-width: 768px) {
+      grid-column: 2 / span 6;
+      padding-bottom: 8.375em;
+    }
+    @media (min-width: 1024px) {
+      grid-column: 5 / span 3;
+      padding-bottom: 0;
+      transform: translateX(0vw);
+    }
   }
   .figure {
     max-width: 100%;

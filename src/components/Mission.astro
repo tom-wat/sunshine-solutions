@@ -166,7 +166,7 @@ import GridWrapper from "./GridWrapper.astro";
   .text-wrapper {
     display: flex;
     flex-direction: column;
-    grid-column: 1 / span 8;
+    grid-column: 2 / span 6;
     --clamp-viewport-min: 320;
     --clamp-viewport-max: 768;
     --clamp-min: 45;
@@ -238,6 +238,7 @@ import GridWrapper from "./GridWrapper.astro";
       --clamp-min: 60;
       --clamp-max: 120;
       margin-bottom: 2.375em;
+      word-break: keep-all;
     }
   }
   .paragraph {
