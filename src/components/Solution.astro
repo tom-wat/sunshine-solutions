@@ -288,8 +288,13 @@ import CardImage8 from "../assets/hector-ramon-perez-sjAtGCs6VXs-unsplash.avif";
   .earth {
     width: 100%;
     height: auto;
-    position: sticky;
     top: 5rem;
+    @media (min-width: 768px) {
+      position: sticky;
+    }
+    @media (min-width: 1024px) {
+      position: sticky;
+    }
   }
   .text-wrapper {
     display: flex;
