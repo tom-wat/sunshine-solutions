@@ -31,11 +31,15 @@
 
 <style>
   .menu-container {
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 767;
+    --clamp-min: 14;
+    --clamp-max: 16;
     position: fixed;
-    top: 7%;
+    top: 3%;
     right: 5%;
     z-index: 100;
-    font-size: 1rem;
+    font-size: var(--clamp);
     font-family: "jost", sans-serif;
     font-weight: 500;
     line-height: 0;
@@ -48,23 +52,53 @@
       visibility: visible;
       opacity: 100%;
     }
+    @media (min-width: 768px) {
+      top: 5%;
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 14;
+      --clamp-max: 16;
+    }
+    @media (min-width: 1024px) {
+      top: 7%;
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 16;
+      --clamp-max: 24;
+    }
   }
 
   #menu-toggle {
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 767;
+    --clamp-min: 10;
+    --clamp-max: 12;
     background: none;
     border: none;
     cursor: pointer;
     line-height: 0;
-    padding: 0.75rem 0.75rem;
+    padding: var(--clamp) var(--clamp);
     border: 0;
     border-radius: 0.5rem;
     background-color: hsl(0 0% 0% / 0.1);
     backdrop-filter: blur(1rem);
-    color: hsl(0, 0%, 100%);
+    color: var(--color-white);
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 14;
+      --clamp-max: 16;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 16;
+      --clamp-max: 24;
+    }
   }
 
   #menu-toggle:focus-visible {
-    outline: 2px solid hsl(45, 100%, 50%);
+    outline: 2px solid var(--color-hover);
     border-radius: 0.5rem;
   }
 
@@ -99,30 +133,62 @@
   }
 
   #menu-list a {
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 767;
+    --clamp-min: 16;
+    --clamp-max: 18;
     display: block;
-    padding: 1rem 2rem;
+    padding: var(--clamp) calc(var(--clamp) * 1.5);
     text-decoration: none;
-    color: #fff;
+    color: var(--color-white);
     transition: background-color 0.2s;
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 16;
+      --clamp-max: 18;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 18;
+      --clamp-max: 36;
+    }
   }
 
   #menu-list a:hover,
   #menu-list a:focus-visible {
-    background-color: hsl(45, 100%, 50%);
+    background-color: var(--color-hover);
     outline: none;
   }
   .hamburger {
-    width: 1rem;
-    height: 1rem;
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 767;
+    --clamp-min: 16;
+    --clamp-max: 18;
+    width: var(--clamp);
+    height: var(--clamp);
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 16;
+      --clamp-max: 18;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 16;
+      --clamp-max: 24;
+    }
   }
 
   .line {
     display: block;
-    background: #fff;
+    background: var(--color-white);
     width: 100%;
     height: 2px;
     transition: all 0.3s;
@@ -130,7 +196,24 @@
   }
 
   #menu-toggle[aria-expanded="true"] .line1 {
-    transform: translateY(calc(0.5rem - 1px)) rotate(45deg);
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 767;
+    --clamp-min: 16;
+    --clamp-max: 18;
+    font-size: var(--clamp);
+    transform: translateY(calc(0.5em - 1px)) rotate(45deg);
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 16;
+      --clamp-max: 18;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 16;
+      --clamp-max: 24;
+    }
   }
 
   #menu-toggle[aria-expanded="true"] .line2 {
@@ -138,7 +221,24 @@
   }
 
   #menu-toggle[aria-expanded="true"] .line3 {
-    transform: translateY(calc(-0.5rem + 1px)) rotate(-45deg);
+    --clamp-viewport-min: 320;
+    --clamp-viewport-max: 767;
+    --clamp-min: 16;
+    --clamp-max: 18;
+    font-size: var(--clamp);
+    transform: translateY(calc(-0.5em + 1px)) rotate(-45deg);
+    @media (min-width: 768px) {
+      --clamp-viewport-min: 768;
+      --clamp-viewport-max: 1024;
+      --clamp-min: 16;
+      --clamp-max: 18;
+    }
+    @media (min-width: 1024px) {
+      --clamp-viewport-min: 1280;
+      --clamp-viewport-max: 2560;
+      --clamp-min: 16;
+      --clamp-max: 24;
+    }
   }
 </style>
 <script>
