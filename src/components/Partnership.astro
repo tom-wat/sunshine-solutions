@@ -46,23 +46,17 @@ import figure from "../assets/triangle.avif";
     display: flex;
     flex-direction: column;
     grid-column: 2 / span 6;
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 768;
     --clamp-min: 45;
     --clamp-max: 108;
     padding-top: var(--clamp);
     color: hsl(0, 0%, 25%);
     @media (min-width: 768px) {
       grid-column: 2 / span 5;
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 108;
       --clamp-max: 144;
     }
     @media (min-width: 1024px) {
       grid-column: 2 / span 3;
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 104;
       --clamp-max: 208;
     }
@@ -77,14 +71,10 @@ import figure from "../assets/triangle.avif";
     font-weight: 500;
     margin-bottom: 1rem;
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 26;
       --clamp-max: 34;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 32;
       --clamp-max: 64;
     }
@@ -93,8 +83,6 @@ import figure from "../assets/triangle.avif";
     }
   }
   .headline {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 768;
     --clamp-min: 32;
     --clamp-max: 60;
     color: hsl(340, 100%, 50%);
@@ -105,44 +93,32 @@ import figure from "../assets/triangle.avif";
     margin-bottom: 2.875em;
     transform: translateX(-0.35vw);
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 60;
       --clamp-max: 80;
       margin-bottom: 2.375em;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 60;
       --clamp-max: 120;
       margin-bottom: 2.375em;
     }
   }
   .number {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 768;
     --clamp-min: 36;
     --clamp-max: 64;
     font-size: var(--clamp);
     letter-spacing: 0.25rem;
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 64;
       --clamp-max: 84;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 64;
       --clamp-max: 124;
     }
   }
   .sub-headline {
     font-size: var(--clamp);
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 768;
     --clamp-min: 18;
     --clamp-max: 20;
     font-family: "noto sans", sans-serif;
@@ -150,22 +126,16 @@ import figure from "../assets/triangle.avif";
     letter-spacing: 0.05rem;
     margin-bottom: 2em;
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 20;
       --clamp-max: 26;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 20;
       --clamp-max: 36;
     }
   }
   .paragraph {
     font-size: var(--clamp);
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 768;
     --clamp-min: 14;
     --clamp-max: 16;
     font-family: "noto sans", sans-serif;
@@ -174,16 +144,12 @@ import figure from "../assets/triangle.avif";
     padding-bottom: 6.375em;
     letter-spacing: 0.05rem;
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 16;
       --clamp-max: 22;
       padding-bottom: 8.375em;
       word-break: keep-all;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 16;
       --clamp-max: 32;
       padding-bottom: 8.375em;
@@ -197,8 +163,6 @@ import figure from "../assets/triangle.avif";
     display: grid;
     place-content: center;
     font-size: var(--clamp);
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 768;
     --clamp-min: 14;
     --clamp-max: 16;
     padding-bottom: 6.375em;

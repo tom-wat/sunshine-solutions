@@ -37,19 +37,13 @@ const { src, alt, width, height, className } = Astro.props;
     height: 100%;
     object-fit: cover;
     border-radius: var(--clamp);
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 767;
     --clamp-min: 24;
     --clamp-max: 32;
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 16;
       --clamp-max: 20;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 20;
       --clamp-max: 40;
     }

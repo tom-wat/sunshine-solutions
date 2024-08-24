@@ -7,6 +7,10 @@
   --color-tag-orange: hsl(20, 100%, 70%);
   --color-hover: hsl(45, 100%, 50%);
   --color-shadow: hsl(30 100% 40%);
+  --clamp-viewport-min: 320;
+  --clamp-viewport-max: 767;
+  --clamp-min: 14;
+  --clamp-max: 16;
 }
 
 @font-face {
@@ -85,9 +89,15 @@
     calc(var(--clamp-max) * (1rem / var(--clamp-root-font-size)))
   );
 }
-body {
-  --clamp-viewport-min: 375;
-  --clamp-viewport-max: 1200;
-  --clamp-min: 14;
-  --clamp-max: 16;
+@media (min-width: 768px) {
+  :root {
+    --clamp-viewport-min: 768;
+    --clamp-viewport-max: 1024;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --clamp-viewport-min: 1280;
+    --clamp-viewport-max: 2560;
+  }
 }

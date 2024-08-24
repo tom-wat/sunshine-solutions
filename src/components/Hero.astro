@@ -38,8 +38,6 @@ import Header from "./Header.astro";
     left: 12vw;
   }
   p {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 767;
     --clamp-min: 45;
     --clamp-max: 63;
     color: var(--color-white);
@@ -49,14 +47,10 @@ import Header from "./Header.astro";
     font-weight: 500;
     filter: drop-shadow(0 0 1rem var(--color-shadow));
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 93;
       --clamp-max: 127;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 90;
       --clamp-max: 180;
     }

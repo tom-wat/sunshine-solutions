@@ -117,13 +117,13 @@ import GridWrapper from "./GridWrapper.astro";
     }
   }
   li {
-    --clamp-viewport-min: 1280;
-    --clamp-viewport-max: 2560;
-    --clamp-min: 15;
-    --clamp-max: 28;
     font-size: var(--clamp);
     font-family: "jost", sans-serif;
     font-weight: 500;
+    @media (min-width: 1024px) {
+      --clamp-min: 15;
+      --clamp-max: 28;
+    }
 
     &:first-child {
       grid-column: 1 / span 1;
@@ -143,22 +143,16 @@ import GridWrapper from "./GridWrapper.astro";
     color: var(--color-hover);
   }
   h1 {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 767;
     --clamp-min: 66;
     --clamp-max: 158;
     width: var(--clamp);
     height: 100%;
     grid-column: 1 / span 1;
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 133;
       --clamp-max: 177;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 136;
       --clamp-max: 272;
     }

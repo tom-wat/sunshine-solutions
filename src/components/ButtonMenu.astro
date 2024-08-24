@@ -31,8 +31,6 @@
 
 <style>
   .menu-container {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 767;
     --clamp-min: 14;
     --clamp-max: 16;
     position: fixed;
@@ -54,23 +52,17 @@
     }
     @media (min-width: 768px) {
       top: 5%;
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 14;
       --clamp-max: 16;
     }
     @media (min-width: 1024px) {
       top: 7%;
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 16;
       --clamp-max: 24;
     }
   }
 
   #menu-toggle {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 767;
     --clamp-min: 10;
     --clamp-max: 12;
     background: none;
@@ -84,14 +76,10 @@
     backdrop-filter: blur(1rem);
     color: var(--color-white);
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 14;
       --clamp-max: 16;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 16;
       --clamp-max: 24;
     }
@@ -133,8 +121,6 @@
   }
 
   #menu-list a {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 767;
     --clamp-min: 16;
     --clamp-max: 18;
     display: block;
@@ -143,14 +129,10 @@
     color: var(--color-white);
     transition: background-color 0.2s;
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 16;
       --clamp-max: 18;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 18;
       --clamp-max: 36;
     }
@@ -162,8 +144,6 @@
     outline: none;
   }
   .hamburger {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 767;
     --clamp-min: 16;
     --clamp-max: 18;
     width: var(--clamp);
@@ -173,14 +153,10 @@
     flex-direction: column;
     justify-content: space-between;
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 16;
       --clamp-max: 18;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 16;
       --clamp-max: 24;
     }
@@ -196,21 +172,15 @@
   }
 
   #menu-toggle[aria-expanded="true"] .line1 {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 767;
     --clamp-min: 16;
     --clamp-max: 18;
     font-size: var(--clamp);
     transform: translateY(calc(0.5em - 1px)) rotate(45deg);
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 16;
       --clamp-max: 18;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 16;
       --clamp-max: 24;
     }
@@ -221,21 +191,15 @@
   }
 
   #menu-toggle[aria-expanded="true"] .line3 {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 767;
     --clamp-min: 16;
     --clamp-max: 18;
     font-size: var(--clamp);
     transform: translateY(calc(-0.5em + 1px)) rotate(-45deg);
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 16;
       --clamp-max: 18;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 16;
       --clamp-max: 24;
     }
@@ -255,10 +219,9 @@
         menuNav.classList.remove("active");
         setTimeout(() => {
           menuNav.hidden = true;
-        }, 300); // トランジションの時間と合わせる
+        }, 300);
       } else {
         menuNav.hidden = false;
-        // 非同期で実行することで、hidden属性の解除が反映された後にクラスを追加
         setTimeout(() => {
           menuNav.classList.add("active");
         }, 10);

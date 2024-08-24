@@ -167,30 +167,22 @@ import GridWrapper from "./GridWrapper.astro";
     display: flex;
     flex-direction: column;
     grid-column: 2 / span 6;
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 768;
     --clamp-min: 45;
     --clamp-max: 108;
     padding-top: var(--clamp);
     color: hsl(0, 0%, 25%);
     @media (min-width: 768px) {
       grid-column: 2 / span 5;
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 108;
       --clamp-max: 144;
     }
     @media (min-width: 1024px) {
       grid-column: 2 / span 3;
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 104;
       --clamp-max: 208;
     }
   }
   .category {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 767;
     --clamp-min: 18;
     --clamp-max: 24;
     font-size: var(--clamp);
@@ -198,14 +190,10 @@ import GridWrapper from "./GridWrapper.astro";
     font-weight: 500;
     margin-bottom: 1rem;
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 26;
       --clamp-max: 34;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 32;
       --clamp-max: 64;
     }
@@ -214,8 +202,6 @@ import GridWrapper from "./GridWrapper.astro";
     }
   }
   .headline {
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 768;
     --clamp-min: 32;
     --clamp-max: 60;
     color: hsl(340, 100%, 50%);
@@ -226,15 +212,11 @@ import GridWrapper from "./GridWrapper.astro";
     margin-bottom: 2.875em;
     transform: translateX(-0.35vw);
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 60;
       --clamp-max: 80;
       margin-bottom: 2.375em;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 60;
       --clamp-max: 120;
       margin-bottom: 2.375em;
@@ -243,8 +225,6 @@ import GridWrapper from "./GridWrapper.astro";
   }
   .paragraph {
     font-size: var(--clamp);
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 768;
     --clamp-min: 14;
     --clamp-max: 16;
     font-family: "noto sans", sans-serif;
@@ -253,16 +233,12 @@ import GridWrapper from "./GridWrapper.astro";
     padding-bottom: 6.375em;
     letter-spacing: 0.05rem;
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 16;
       --clamp-max: 22;
       padding-bottom: 8.375em;
       word-break: keep-all;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 16;
       --clamp-max: 32;
       padding-bottom: 8.375em;
@@ -275,21 +251,15 @@ import GridWrapper from "./GridWrapper.astro";
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    --clamp-viewport-min: 320;
-    --clamp-viewport-max: 767;
     --clamp-min: 300;
     --clamp-max: 673;
     width: var(--clamp);
     z-index: -1;
     @media (min-width: 768px) {
-      --clamp-viewport-min: 768;
-      --clamp-viewport-max: 1024;
       --clamp-min: 673;
       --clamp-max: 896;
     }
     @media (min-width: 1024px) {
-      --clamp-viewport-min: 1280;
-      --clamp-viewport-max: 2560;
       --clamp-min: 896;
       --clamp-max: 1792;
     }
