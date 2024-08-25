@@ -1,4 +1,5 @@
 ---
+import BackgroundGradient from "./BackgroundGradient.astro";
 import GridWrapper from "./GridWrapper.astro";
 ---
 
@@ -27,6 +28,10 @@ import GridWrapper from "./GridWrapper.astro";
       />
     </div>
   </GridWrapper>
+  <BackgroundGradient
+    color1="hsl(75 100% 50% / 20%)"
+    color2="hsl(350 100% 50% / 12.5%)"
+  />
 </section>
 
 <style>
@@ -39,6 +44,7 @@ import GridWrapper from "./GridWrapper.astro";
       rgba(206, 255, 128, 0.35) 100%
     );
     position: relative;
+    overflow: hidden;
   }
   .text-wrapper {
     display: flex;

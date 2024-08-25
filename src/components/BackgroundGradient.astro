@@ -1,0 +1,71 @@
+---
+const { color1, color2 } = Astro.props;
+---
+
+<div class="background1"></div>
+<div class="background2"></div>
+
+<style define:vars={{ color1, color2 }}>
+  .background1 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      var(--color1) 0%,
+      rgba(214, 242, 90, 0) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: -5;
+    animation: move 15s ease-in-out infinite;
+  }
+  .background2 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      var(--color2) 0%,
+      rgba(214, 242, 90, 0) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: -5;
+    animation: move 10s ease-in-out infinite;
+  }
+  @keyframes move {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    15% {
+      top: 50%;
+      left: 50%;
+    }
+    30% {
+      top: 100%;
+      left: 100%;
+    }
+    45% {
+      top: 0%;
+      left: 100%;
+    }
+    60% {
+      top: 50%;
+      left: 50%;
+    }
+    80% {
+      top: 100%;
+      left: 0%;
+    }
+    100% {
+      top: 0;
+      left: 0;
+    }
+  }
+</style>

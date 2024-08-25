@@ -2,7 +2,9 @@
 
 ---
 
-<div class="loading-screen"></div>
+<div class="loading-screen">
+  <div class="picture-wrapper"></div>
+</div>
 
 <style>
   .loading-screen {
@@ -11,7 +13,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: hsl(0, 0%, 98%);
+    background-color: hsl(240, 100%, 98%);
     z-index: 9999;
     opacity: 1;
     transition: opacity 1s ease-out;
@@ -19,6 +21,14 @@
 
   .loading-screen.fade-out {
     opacity: 0;
+  }
+
+  .picture-wrapper {
+    width: 75vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 </style>
 
