@@ -6,13 +6,13 @@ const { src, alt, className } = Astro.props;
 <div class=`card ${className}`>
   <picture class="image">
     <source
-      media="(min-width: 1024px)"
+      media="(min-width: 1025px)"
       srcset=`${src}-l.avif 2000w,${src}.avif 1000w`
       sizes="calc(100vw - 940px)"
       type="image/avif"
     />
     <source
-      media="(max-width: 1023px)"
+      media="(max-width: 1024px)"
       srcset=`${src}.avif`
       type="image/avif"
     />
@@ -30,7 +30,7 @@ const { src, alt, className } = Astro.props;
     @media (min-width: 768px) {
       aspect-ratio: 3 / 4;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       aspect-ratio: 5 / 6;
     }
   }
@@ -40,7 +40,7 @@ const { src, alt, className } = Astro.props;
     @media (min-width: 768px) {
       grid-column: 5 / span 4;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       grid-column: 5 / span 3;
     }
   }
@@ -58,7 +58,7 @@ const { src, alt, className } = Astro.props;
       --clamp-min: 16;
       --clamp-max: 20;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       --clamp-min: 20;
       --clamp-max: 40;
     }

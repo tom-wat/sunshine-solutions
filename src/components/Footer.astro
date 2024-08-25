@@ -115,7 +115,7 @@ import GridWrapper from "./GridWrapper.astro";
       --clamp-min: 15;
       --clamp-max: 16;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       --clamp-min: 16;
       --clamp-max: 32;
     }
@@ -138,7 +138,7 @@ import GridWrapper from "./GridWrapper.astro";
     @media (min-width: 768px) {
       margin-bottom: 10.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       margin-bottom: 10.5rem;
     }
   }
@@ -154,7 +154,7 @@ import GridWrapper from "./GridWrapper.astro";
       flex-direction: row;
       margin-bottom: 10.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       flex-direction: row;
       margin-bottom: 10.5rem;
     }
@@ -166,16 +166,22 @@ import GridWrapper from "./GridWrapper.astro";
   a {
     color: inherit;
     transition: color 0.3s;
+    &:hover {
+      @media (any-hover: hover) {
+        color: var(--color-hover);
+      }
+    }
+    &:focus-visible {
+      color: var(--color-hover);
+    }
   }
-  a:hover {
-    color: var(--color-hover);
-  }
+
   .image-wrapper {
     grid-column: 1 / span 8;
     @media (min-width: 768px) {
       grid-column: 1 / span 5;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       grid-column: 1 / span 4;
     }
   }

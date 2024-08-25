@@ -112,7 +112,7 @@ import GridWrapper from "./GridWrapper.astro";
     align-items: center;
     white-space: nowrap;
     visibility: hidden;
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       visibility: visible;
     }
   }
@@ -120,7 +120,7 @@ import GridWrapper from "./GridWrapper.astro";
     font-size: var(--clamp);
     font-family: "jost", sans-serif;
     font-weight: 500;
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       --clamp-min: 15;
       --clamp-max: 28;
     }
@@ -138,10 +138,16 @@ import GridWrapper from "./GridWrapper.astro";
   a {
     color: inherit;
     transition: color 0.3s;
+    &:hover {
+      @media (any-hover: hover) {
+        color: var(--color-hover);
+      }
+    }
+    &:focus-visible {
+      color: var(--color-hover);
+    }
   }
-  a:hover {
-    color: var(--color-hover);
-  }
+
   h1 {
     --clamp-min: 66;
     --clamp-max: 158;
@@ -152,7 +158,7 @@ import GridWrapper from "./GridWrapper.astro";
       --clamp-min: 133;
       --clamp-max: 177;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       --clamp-min: 136;
       --clamp-max: 272;
     }

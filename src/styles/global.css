@@ -95,7 +95,7 @@
     --clamp-viewport-max: 1024;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   :root {
     --clamp-viewport-min: 1280;
     --clamp-viewport-max: 2560;
