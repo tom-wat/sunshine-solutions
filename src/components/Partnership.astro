@@ -1,7 +1,5 @@
 ---
 import GridWrapper from "./GridWrapper.astro";
-import { Image } from "astro:assets";
-import figure from "../assets/triangle.avif";
 ---
 
 <section id="partnerships">
@@ -20,12 +18,12 @@ import figure from "../assets/triangle.avif";
       </p>
     </div>
     <div class="picture-wrapper">
-      <Image
-        src={figure}
+      <img
+        src="/sunshine-solutions/images/triangle.avif"
         alt="地球誕生から現在までの数直線"
-        width="1200"
-        height="1019"
         class="figure"
+        width="2000"
+        height="1698"
       />
     </div>
   </GridWrapper>

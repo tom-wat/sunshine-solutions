@@ -1,20 +1,36 @@
 ---
 const { src, alt } = Astro.props;
-import { Image } from "astro:assets";
 ---
 
 <section>
-  <Image src={src} alt={alt} class="image" />
+  <picture class="image">
+    <source
+      media="(min-width: 1024px)"
+      srcset=`${src}-4k.avif 3840w,${src}-3k.avif 2880w,${src}-2k.avif 1920w`
+      sizes="100vw"
+      type="image/avif"
+    />
+    <source
+      media="(min-width: 768px)"
+      srcset=`${src}-tab.avif`
+      type="image/avif"
+    />
+    <source
+      media="(max-width: 767px)"
+      srcset=`${src}-sp.avif`
+      type="image/avif"
+    />
+    <img src=`${src}.jpg` alt={alt} width="3840" height="2160" loading="lazy" />
+  </picture>
 </section>
 
 <style>
   section {
-    container-type: inline-size;
     min-height: 100svh;
     position: relative;
     background-color: black;
   }
-  .image {
+  .image img {
     position: absolute;
     width: 100%;
     height: 100svh;

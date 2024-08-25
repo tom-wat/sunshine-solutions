@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import myImage from "../assets/jean-guy-nakars-nsMSEUHuOEU-unsplash.avif";
 import Header from "./Header.astro";
 ---
 
@@ -13,7 +11,30 @@ import Header from "./Header.astro";
       Eternal.
     </p>
   </h2>
-  <Image src={myImage} alt="雄大な朝日の風景" class="hero" />
+  <picture class="hero">
+    <source
+      media="(min-width: 1024px)"
+      srcset="/sunshine-solutions/images/hero-4k.avif 3840w,/sunshine-solutions/images/hero-3k.avif 2880w,/sunshine-solutions/images/hero-2k.avif 1920w"
+      sizes="100vw"
+      type="image/avif"
+    />
+    <source
+      media="(min-width: 768px)"
+      srcset="/sunshine-solutions/images/hero-tab.avif"
+      type="image/avif"
+    />
+    <source
+      media="(max-width: 767px)"
+      srcset="/sunshine-solutions/images/hero-sp.avif"
+      type="image/avif"
+    />
+    <img
+      src="/sunshine-solutions/images/hero.jpg"
+      alt="朝日が登る風景"
+      width="3840"
+      height="2160"
+    />
+  </picture>
 </div>
 
 <style>
@@ -29,8 +50,12 @@ import Header from "./Header.astro";
     left: 0;
     width: 100%;
     height: 100svh;
-    object-fit: cover;
     z-index: -1;
+  }
+  .hero img {
+    width: 100%;
+    height: 100svh;
+    object-fit: cover;
   }
   h2 {
     position: absolute;
