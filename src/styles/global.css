@@ -15,21 +15,21 @@
 
 @font-face {
   font-family: "jost";
-  src: url("/sunshine-solutions/fonts/Jost-Medium.ttf") format("truetype");
+  src: url("/sunshine-solutions/fonts/jost-v15-latin-500.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: "cormorant garamond";
-  src: url("/sunshine-solutions/fonts/CormorantGaramond-Medium.ttf")
-    format("truetype");
+  src: url("/sunshine-solutions/fonts/cormorant-garamond-v16-latin-500.woff2")
+    format("woff2");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: "cormorant garamond";
-  src: url("/sunshine-solutions/fonts/CormorantGaramond-Bold.ttf")
-    format("truetype");
+  src: url("/sunshine-solutions/fonts/cormorant-garamond-v16-latin-700.woff2")
+    format("woff2");
   font-weight: 700;
   font-display: swap;
 }
