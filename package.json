@@ -13,6 +13,6 @@
     "astro": "^4.13.1",
     "astro-icon": "^1.1.0",
     "astro-relative-links": "^0.4.0",
-    "iconify": "^1.4.0"
+    "lenis": "^1.1.11"
   }
 }
