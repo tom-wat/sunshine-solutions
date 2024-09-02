@@ -7,11 +7,19 @@
 <script>
   import p5 from "p5";
   const container = document.getElementById("sketch-container");
+  const windowWidth = window.innerWidth;
   const sketch = (p: p5) => {
     let stars = [];
     let milkyWay = [];
-    const numStars = 1000;
-    const numMilkyWayStars = 3000;
+    let numStars = 500;
+    let numMilkyWayStars = 1500;
+    if (windowWidth < 768) {
+      numStars = 100;
+      numMilkyWayStars = 500;
+    } else if (windowWidth >= 768 && windowWidth <= 1024) {
+      numStars = 200;
+      numMilkyWayStars = 1000;
+    }
     const starColors = [[255, 255, 255]];
     p.setup = () => {
       const canvas = p.createCanvas(
