@@ -1,0 +1,103 @@
+---
+
+---
+
+<div id="sketch-container"></div>
+
+<script>
+  import p5 from "p5";
+  const container = document.getElementById("sketch-container");
+  const sketch = (p: p5) => {
+    let stars = [];
+    let milkyWay = [];
+    const numStars = 1000;
+    const numMilkyWayStars = 3000;
+    const starColors = [[255, 255, 255]];
+    p.setup = () => {
+      const canvas = p.createCanvas(
+        container.offsetWidth,
+        container.offsetHeight
+      );
+      canvas.style("vertical-align", "bottom");
+
+      p.clear(); // Start with a transparent canvas
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: p.random(p.width),
+          y: p.random(p.height),
+          size: p.random(0.5, 2),
+          twinkleSpeed: p.random(0.02, 0.05),
+          color: p.random(starColors),
+        });
+      }
+      for (let i = 0; i < numMilkyWayStars; i++) {
+        milkyWay.push({
+          x: p.random(p.width),
+          y: p.random(p.height),
+          size: p.random(0.5, 1.5),
+          alpha: p.random(100, 200),
+          color: p.random(starColors),
+        });
+      }
+    };
+
+    p.draw = () => {
+      p.clear(); // Clear the canvas with transparency
+      // background(255, 255, 235); // Light yellow background
+
+      // Draw Milky Way
+      drawMilkyWay();
+
+      // Draw stars
+      for (let star of stars) {
+        let twinkle = p.sin(p.frameCount * star.twinkleSpeed) * 0.5 + 0.5;
+        p.fill(
+          star.color[0],
+          star.color[1],
+          star.color[2],
+          100 + 155 * twinkle
+        );
+        p.noStroke();
+        p.ellipse(star.x, star.y, star.size);
+      }
+
+      // Move stars and Milky Way slowly
+      for (let star of stars) {
+        star.x -= 0.1;
+        if (star.x < 0) star.x = p.width;
+      }
+      for (let star of milkyWay) {
+        star.x -= 0.05;
+        if (star.x < 0) star.x = p.width;
+      }
+    };
+
+    const drawMilkyWay = () => {
+      for (let star of milkyWay) {
+        let distance = p.abs(star.y - p.height / 2) / (p.height / 2);
+        let adjustedAlpha = star.alpha * (1 - distance);
+        p.fill(star.color[0], star.color[1], star.color[2], adjustedAlpha);
+        p.noStroke();
+        p.ellipse(star.x, star.y, star.size);
+      }
+    };
+
+    p.windowResized = () => {
+      p.resizeCanvas(container.offsetWidth, container.offsetHeight);
+    };
+  };
+
+  new p5(sketch, container);
+</script>
+
+<style>
+  #sketch-container {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+</style>

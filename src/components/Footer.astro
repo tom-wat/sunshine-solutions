@@ -1,5 +1,6 @@
 ---
 import GridWrapper from "./GridWrapper.astro";
+import P5Sketch from "./P5Sketch.astro";
 ---
 
 <footer id="footer">
@@ -101,11 +102,14 @@ import GridWrapper from "./GridWrapper.astro";
       >
     </div>
   </GridWrapper>
+  <P5Sketch />
 </footer>
 
 <style>
   footer {
     width: 100%;
+    z-index: -10;
+    position: relative;
     background-color: var(--color-black);
     color: var(--color-white);
     font-size: var(--clamp);
@@ -185,4 +189,14 @@ import GridWrapper from "./GridWrapper.astro";
       grid-column: 1 / span 4;
     }
   }
+  .p5Canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
 </style>
+
+<script></script>
