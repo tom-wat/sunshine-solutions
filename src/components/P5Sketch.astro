@@ -28,12 +28,12 @@
       );
       canvas.style("vertical-align", "bottom");
 
-      p.clear(); // Start with a transparent canvas
+      p.background(0, 0, 20);
       for (let i = 0; i < numStars; i++) {
         stars.push({
           x: p.random(p.width),
           y: p.random(p.height),
-          size: p.random(0.5, 2),
+          size: p.random(0.5, 1.5),
           twinkleSpeed: p.random(0.02, 0.05),
           color: p.random(starColors),
         });
@@ -50,9 +50,7 @@
     };
 
     p.draw = () => {
-      p.clear(); // Clear the canvas with transparency
-      // background(255, 255, 235); // Light yellow background
-
+      p.background(0, 0, 20);
       // Draw Milky Way
       drawMilkyWay();
 
