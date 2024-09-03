@@ -4,7 +4,7 @@
 
 <div class="loading-screen">
   <div class="picture-wrapper">
-    <canvas id="solarSystem" width="1100" height="1100"></canvas>
+    <canvas id="loading" width="1100" height="1100"></canvas>
   </div>
 </div>
 
@@ -45,7 +45,9 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const body = document.querySelector("body");
-    const loadingScreen = document.querySelector(".loading-screen");
+    const loadingScreen = document.querySelector(
+      ".loading-screen"
+    ) as HTMLElement;
     let startTime = performance.now();
 
     function hideLoadingScreen() {
@@ -75,10 +77,15 @@
     });
   });
 
-  const canvas = document.getElementById("solarSystem");
+  const canvas = document.getElementById("loading") as HTMLCanvasElement;
   const ctx = canvas.getContext("2d");
 
   class Planet {
+    radius: number;
+    distance: number;
+    speed: number;
+    angle: number;
+
     constructor(radius, distance, speed) {
       this.radius = radius;
       this.distance = distance;

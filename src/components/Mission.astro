@@ -1,5 +1,6 @@
 ---
 import BackgroundGradient from "./BackgroundGradient.astro";
+import CanvasSolar from "./CanvasSolar.astro";
 import GridWrapper from "./GridWrapper.astro";
 ---
 
@@ -21,7 +22,7 @@ import GridWrapper from "./GridWrapper.astro";
         >
       </p>
     </div>
-    <div class="picture-wrapper">
+    <!-- <div class="picture-wrapper">
       <svg
         width="100%"
         height="100%"
@@ -133,130 +134,135 @@ import GridWrapper from "./GridWrapper.astro";
           </g>
         </g>
       </svg>
+    </div> -->
+    <div class="picture-wrapper">
+      <CanvasSolar />
     </div>
+    <BackgroundGradient
+      color1="hsl(75 100% 50% / 17.5%)"
+      color2="hsl(350 100% 50% / 10%)"
+    />
   </GridWrapper>
-  <BackgroundGradient
-    color1="hsl(75 100% 50% / 17.5%)"
-    color2="hsl(350 100% 50% / 10%)"
-  />
-</section>
 
-<style>
-  section {
-    background: rgb(255, 199, 201);
-    background: linear-gradient(
-        135deg,
-        rgba(255, 199, 201, 0.35) 0%,
-        rgba(255, 251, 163, 0.35) 60%,
-        rgba(206, 255, 128, 0.35) 100%
-      ),
-      #fff;
-    position: relative;
-    z-index: -10;
-    overflow: hidden;
-  }
-  .text-wrapper {
-    display: flex;
-    flex-direction: column;
-    grid-column: 2 / span 6;
-    --clamp-min: 45;
-    --clamp-max: 108;
-    padding-top: var(--clamp);
-    color: hsl(0, 0%, 25%);
-    @media (min-width: 768px) {
-      grid-column: 2 / span 5;
-      --clamp-min: 108;
-      --clamp-max: 144;
+  <style>
+    section {
+      background: rgb(255, 199, 201);
+      background: linear-gradient(
+          135deg,
+          rgba(255, 199, 201, 0.35) 0%,
+          rgba(255, 251, 163, 0.35) 60%,
+          rgba(206, 255, 128, 0.35) 100%
+        ),
+        #fff;
+      position: relative;
+      z-index: -10;
+      overflow: hidden;
     }
-    @media (min-width: 1025px) {
-      grid-column: 2 / span 3;
-      --clamp-min: 104;
-      --clamp-max: 208;
+    .text-wrapper {
+      display: flex;
+      flex-direction: column;
+      grid-column: 2 / span 6;
+      --clamp-min: 45;
+      --clamp-max: 108;
+      padding-top: var(--clamp);
+      color: hsl(0, 0%, 25%);
+      @media (min-width: 768px) {
+        grid-column: 2 / span 5;
+        --clamp-min: 108;
+        --clamp-max: 144;
+      }
+      @media (min-width: 1025px) {
+        grid-column: 2 / span 3;
+        --clamp-min: 104;
+        --clamp-max: 208;
+      }
     }
-  }
-  .category {
-    --clamp-min: 18;
-    --clamp-max: 24;
-    font-size: var(--clamp);
-    font-family: "cormorant garamond", serif;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    @media (min-width: 768px) {
-      --clamp-min: 26;
-      --clamp-max: 34;
+    .category {
+      --clamp-min: 18;
+      --clamp-max: 24;
+      font-size: var(--clamp);
+      font-family: "cormorant garamond", serif;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      @media (min-width: 768px) {
+        --clamp-min: 26;
+        --clamp-max: 34;
+      }
+      @media (min-width: 1025px) {
+        --clamp-min: 32;
+        --clamp-max: 64;
+      }
+      & .color {
+        color: hsl(340, 100%, 50%);
+      }
     }
-    @media (min-width: 1025px) {
+    .headline {
       --clamp-min: 32;
-      --clamp-max: 64;
-    }
-    & .color {
+      --clamp-max: 60;
       color: hsl(340, 100%, 50%);
+      font-family: "shippori mincho", serif;
+      font-weight: 400;
+      font-size: var(--clamp);
+      line-height: 1.25;
+      margin-bottom: 2.875em;
+      transform: translateX(-0.35vw);
+      @media (min-width: 768px) {
+        --clamp-min: 60;
+        --clamp-max: 80;
+        margin-bottom: 2.375em;
+      }
+      @media (min-width: 1025px) {
+        --clamp-min: 60;
+        --clamp-max: 120;
+        margin-bottom: 2.375em;
+        word-break: keep-all;
+      }
     }
-  }
-  .headline {
-    --clamp-min: 32;
-    --clamp-max: 60;
-    color: hsl(340, 100%, 50%);
-    font-family: "shippori mincho", serif;
-    font-weight: 400;
-    font-size: var(--clamp);
-    line-height: 1.25;
-    margin-bottom: 2.875em;
-    transform: translateX(-0.35vw);
-    @media (min-width: 768px) {
-      --clamp-min: 60;
-      --clamp-max: 80;
-      margin-bottom: 2.375em;
+    .paragraph {
+      font-size: var(--clamp);
+      --clamp-min: 14;
+      --clamp-max: 16;
+      font-family: "noto sans", sans-serif;
+      font-weight: 500;
+      line-height: 1.9;
+      padding-bottom: 6.375em;
+      letter-spacing: 0.05rem;
+      @media (min-width: 768px) {
+        --clamp-min: 16;
+        --clamp-max: 22;
+        padding-bottom: 8.375em;
+        word-break: keep-all;
+      }
+      @media (min-width: 1025px) {
+        --clamp-min: 16;
+        --clamp-max: 32;
+        padding-bottom: 8.375em;
+        word-break: keep-all;
+      }
     }
-    @media (min-width: 1025px) {
-      --clamp-min: 60;
-      --clamp-max: 120;
-      margin-bottom: 2.375em;
-      word-break: keep-all;
-    }
-  }
-  .paragraph {
-    font-size: var(--clamp);
-    --clamp-min: 14;
-    --clamp-max: 16;
-    font-family: "noto sans", sans-serif;
-    font-weight: 500;
-    line-height: 1.9;
-    padding-bottom: 6.375em;
-    letter-spacing: 0.05rem;
-    @media (min-width: 768px) {
-      --clamp-min: 16;
-      --clamp-max: 22;
-      padding-bottom: 8.375em;
-      word-break: keep-all;
-    }
-    @media (min-width: 1025px) {
-      --clamp-min: 16;
-      --clamp-max: 32;
-      padding-bottom: 8.375em;
-      word-break: keep-all;
-    }
-  }
 
-  .picture-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    --clamp-min: 300;
-    --clamp-max: 673;
-    width: var(--clamp);
-    z-index: -1;
-    @media (min-width: 768px) {
-      --clamp-min: 673;
-      --clamp-max: 896;
+    .picture-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      --clamp-min: 300;
+      --clamp-max: 673;
+      width: var(--clamp);
+      z-index: -1;
+      @media (min-width: 768px) {
+        --clamp-min: 673;
+        --clamp-max: 896;
+      }
+      @media (min-width: 1025px) {
+        --clamp-min: 896;
+        --clamp-max: 1792;
+      }
     }
-    @media (min-width: 1025px) {
-      --clamp-min: 896;
-      --clamp-max: 1792;
+    canvas {
     }
-  }
-  /* .bg-line {
+    /* .bg-line {
     background-color: hsl(60, 100%, 98%);
   } */
-</style>
+  </style>
+</section>

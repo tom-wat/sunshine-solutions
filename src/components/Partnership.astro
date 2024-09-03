@@ -10,12 +10,11 @@ import GridWrapper from "./GridWrapper.astro";
       <h2 class="headline"><span class="number">46</span>億年の歴史</h2>
       <h3 class="sub-headline">私たちと地球の関係</h3>
       <p class="paragraph">
-        <span class="bg-line">私たちは、46億年にわたり、</span>
-        <span class="bg-line">地球に不可欠なエネルギーと</span>
-        <span class="bg-line">光のサービスを提供してきました。</span>
-        <span class="bg-line">私たちは、地球との長年の歴史を誇りに思い、</span>
-        <span class="bg-line">今後も何十億年にわたる</span>
-        <span class="bg-line">素晴らしい未来を楽しみにしています。</span>
+        私たちは、46億年にわたり、<br />
+        地球に不可欠なエネルギーと<br />
+        光のサービスを提供してきました。<br />
+        地球と私たちの、今後も何十億年にわたる<br />
+        素晴らしい未来を楽しみにしています。
       </p>
     </div>
     <div class="picture-wrapper">
@@ -94,6 +93,7 @@ import GridWrapper from "./GridWrapper.astro";
     line-height: 1.25;
     margin-bottom: 2.875em;
     transform: translateX(-0.35vw);
+    text-wrap: nowrap;
     @media (min-width: 768px) {
       --clamp-min: 60;
       --clamp-max: 80;
@@ -145,17 +145,23 @@ import GridWrapper from "./GridWrapper.astro";
     line-height: 1.9;
     padding-bottom: 6.375em;
     letter-spacing: 0.05rem;
+    & br {
+      display: none;
+    }
     @media (min-width: 768px) {
       --clamp-min: 16;
       --clamp-max: 22;
       padding-bottom: 8.375em;
-      word-break: keep-all;
+      text-wrap: balance;
+      & br {
+        display: inline;
+      }
     }
     @media (min-width: 1025px) {
       --clamp-min: 16;
       --clamp-max: 32;
       padding-bottom: 8.375em;
-      word-break: keep-all;
+      text-wrap: balance;
     }
   }
   .picture-wrapper {
