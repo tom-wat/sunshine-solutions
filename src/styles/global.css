@@ -101,6 +101,3 @@
     --clamp-viewport-max: 2560;
   }
 }
-body {
-  overflow: hidden;
-}
