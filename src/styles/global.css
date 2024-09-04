@@ -101,3 +101,9 @@
     --clamp-viewport-max: 2560;
   }
 }
+body {
+  overflow: hidden;
+}
+img {
+  vertical-align: bottom;
+}
