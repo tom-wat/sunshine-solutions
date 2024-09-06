@@ -51,10 +51,8 @@
 
     p.draw = () => {
       p.background(0, 0, 20);
-      // Draw Milky Way
       drawMilkyWay();
 
-      // Draw stars
       for (let star of stars) {
         let twinkle = p.sin(p.frameCount * star.twinkleSpeed) * 0.5 + 0.5;
         p.fill(
@@ -67,7 +65,6 @@
         p.ellipse(star.x, star.y, star.size);
       }
 
-      // Move stars and Milky Way slowly
       for (let star of stars) {
         star.x -= 0.1;
         if (star.x < 0) star.x = p.width;
