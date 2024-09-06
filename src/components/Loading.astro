@@ -59,13 +59,11 @@
 
     function checkCacheAndHide() {
       const loadTime = performance.now() - startTime;
-      const isCached = loadTime < 200; // 200ミリ秒未満の場合、キャッシュされていると仮定
+      const isCached = loadTime < 200;
 
       if (isCached) {
-        // キャッシュがある場合、短い遅延を設定
         setTimeout(hideLoadingScreen, 200);
       } else {
-        // キャッシュがない場合、より長い遅延を設定
         setTimeout(hideLoadingScreen, 800);
       }
     }
@@ -90,7 +88,7 @@
       this.radius = radius;
       this.distance = distance;
       this.speed = speed;
-      this.angle = Math.random() * Math.PI * 2; // ランダムな初期位置
+      this.angle = Math.random() * Math.PI * 2;
     }
 
     update() {
@@ -125,7 +123,6 @@
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // 軌道を描画
     planets.forEach((planet) => planet.drawOrbit());
 
     sun.update();

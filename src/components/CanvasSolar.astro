@@ -48,7 +48,7 @@
       this.radius = radius * dpr;
       this.distance = distance * dpr;
       this.speed = speed;
-      this.angle = Math.random() * Math.PI * 2; // ランダムな初期位置
+      this.angle = Math.random() * Math.PI * 2;
       this.color = color;
     }
 
@@ -93,7 +93,6 @@
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // 軌道を描画
     planets.forEach((planet) => planet.drawOrbit());
 
     sun.update();
