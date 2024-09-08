@@ -5,11 +5,7 @@ import Header from "./Header.astro";
 <div id="hero" class="container">
   <Header />
   <h2>
-    <p>
-      Constant.<br />
-      Illuminating.<br />
-      Eternal.
-    </p>
+    <p>Constant.&NewLine; Illuminating.&NewLine; Eternal.</p>
   </h2>
   <picture class="hero">
     <source
@@ -70,6 +66,7 @@ import Header from "./Header.astro";
     line-height: 1;
     font-family: "cormorant garamond", serif;
     font-weight: 500;
+    white-space: pre-line;
     filter: drop-shadow(0 0 1rem var(--color-shadow));
     @media (min-width: 768px) and (orientation: portrait) {
       --clamp-min: 93;

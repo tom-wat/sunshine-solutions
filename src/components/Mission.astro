@@ -8,7 +8,7 @@ import GridWrapper from "./GridWrapper.astro";
   <GridWrapper>
     <div class="text-wrapper">
       <p class="category">Our <span class="color">mission</span></p>
-      <h2 class="headline">絶え間なく<br />宇宙を<br />照らし続ける</h2>
+      <h2 class="headline">絶え間なく&NewLine;宇宙を&NewLine;照らし続ける</h2>
       <p class="paragraph">
         <span class="bg-line">私たちは太陽系の中心にある存在として、</span>
         <span class="bg-line"
@@ -205,6 +205,7 @@ import GridWrapper from "./GridWrapper.astro";
       font-size: var(--clamp);
       line-height: 1.25;
       margin-bottom: 2.875em;
+      white-space: pre-line;
       transform: translateX(-0.35vw);
       @media (min-width: 768px) {
         --clamp-min: 60;
