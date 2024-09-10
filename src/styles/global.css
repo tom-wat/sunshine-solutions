@@ -15,47 +15,44 @@
 
 @font-face {
   font-family: "jost";
-  src: url("/sunshine-solutions/fonts/jost-v15-latin-500.woff2") format("woff2");
+  src: url("/fonts/jost-v15-latin-500.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: "cormorant garamond";
-  src: url("/sunshine-solutions/fonts/cormorant-garamond-v16-latin-500.woff2")
-    format("woff2");
+  src: url("/fonts/cormorant-garamond-v16-latin-500.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: "cormorant garamond";
-  src: url("/sunshine-solutions/fonts/cormorant-garamond-v16-latin-700.woff2")
-    format("woff2");
+  src: url("/fonts/cormorant-garamond-v16-latin-700.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
 }
 /* @font-face {
   font-family: "shippori mincho";
-  src: url("/sunshine-solutions/fonts/shippori-mincho-v14-japanese-regular.woff2")
+  src: url("/fonts/shippori-mincho-v14-japanese-regular.woff2")
     format("woff2");
   font-weight: 400;
   font-display: swap;
 } */
 @font-face {
   font-family: "shippori mincho";
-  src: url("/sunshine-solutions/fonts/shippori-regular-subset.woff2")
-    format("woff2");
+  src: url("/fonts/shippori-regular-subset.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "noto sans";
-  src: url("/sunshine-solutions/fonts/NotoSansJP-Regular.woff2") format("woff2");
+  src: url("/fonts/NotoSansJP-Regular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "noto sans";
-  src: url("/sunshine-solutions/fonts/NotoSansJP-Medium.woff2") format("woff2");
+  src: url("/fonts/NotoSansJP-Medium.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }

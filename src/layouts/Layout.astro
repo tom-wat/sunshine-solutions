@@ -1,6 +1,6 @@
 ---
 const { title, description } = Astro.props;
-const socialImageURL = new URL("/sunshine-solutions/images/ogp.png", Astro.url);
+const socialImageURL = new URL("/images/ogp.png", Astro.url);
 ---
 
 <!doctype html>
@@ -10,11 +10,7 @@ const socialImageURL = new URL("/sunshine-solutions/images/ogp.png", Astro.url);
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/sunshine-solutions/favicon.svg"
-    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:title" content="Sunshine Solutions" />
     <meta property="og:description" content="A conceptual business website" />
