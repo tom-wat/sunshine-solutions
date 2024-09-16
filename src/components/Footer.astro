@@ -5,11 +5,13 @@ import P5Sketch from "./P5Sketch.astro";
 
 <footer id="footer">
   <GridWrapper>
-    <div class="category">Address</div>
-    <div class="address">
-      Solar System Center, Milky Way Galaxy <br role="none" />
-      93 Million Mile Mark
-    </div>
+    <address>
+      <p class="category">Address</p>
+      <p class="address">
+        Solar System Center, Milky Way Galaxy <br role="none" />
+        93 Million Mile Mark
+      </p>
+    </address>
     <ul>
       <li><a href="#mission">Our mission</a></li>
       <li><a href="#solutions">Our solutions</a></li>
@@ -130,11 +132,14 @@ import P5Sketch from "./P5Sketch.astro";
     margin-bottom: 2.625rem;
     transform: translateX(0.3vw);
   }
+  address {
+    font-style: normal;
+    grid-column: 1 / span 3;
+  }
   .address {
     font-family: "jost", sans-serif;
     font-weight: 500;
     line-height: 1.5;
-    grid-column: 1 / span 3;
     margin-bottom: 7.5rem;
     transform: translateX(0.3vw);
     @media (min-width: 768px) {
